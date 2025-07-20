@@ -3,6 +3,12 @@ import os
 import dotenv
 import uuid
 
+# check if it's linux so it works on Streamlit Cloud
+if os.name == 'posix':
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from langchain_openai import AzureChatOpenAI
 from langchain.schema import HumanMessage, AIMessage
 
