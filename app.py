@@ -41,7 +41,7 @@ if "messages" not in st.session_state:
         {"role": "user", "content": "Hello"},
         {"role": "assistant", "content": "Hi there! How can I assist you today?"}
         ]
-if "cloud_key_availavle" in st.session_state:
+if "cloud_key_availavle" not in st.session_state:
     st.session_state.cloud_key_available = False
 
 def cloud_key():
